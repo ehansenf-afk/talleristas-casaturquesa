@@ -60,11 +60,11 @@
   }
 
   label { display: block; font-size: 12px; color: #8a7a68; margin: 14px 0 5px; font-weight: 500; }
-  input, textarea {
+  input, textarea, select {
     width: 100%; padding: 11px 12px; border: 1px solid #e3dbcb; border-radius: 8px;
     background: #fff; font-size: 14px; color: #2b2420; font-family: inherit; resize: vertical;
   }
-  input:focus, textarea:focus { outline: none; border-color: #10a89f; }
+  input:focus, textarea:focus, select:focus { outline: none; border-color: #10a89f; }
   .opt { font-weight: 400; color: #a89a86; }
   .field-err { font-size: 11px; color: #c0392b; margin-top: 3px; min-height: 14px; }
   #btn {
@@ -156,6 +156,14 @@
       <label>Redes sociales</label>
       <input type="text" id="redes" placeholder="@tuinstagram" required>
 
+      <label>Modalidad que te interesa</label>
+      <select id="modalidad" required>
+        <option value="">-- Elige una --</option>
+        <option value="Autogestión">1. Autogestión (sin costo)</option>
+        <option value="Publicidad compartida">2. Publicidad compartida</option>
+        <option value="Gestión completa">3. Gestión completa</option>
+      </select>
+
       <label>Descripción del taller <span class="opt">(opcional)</span></label>
       <textarea id="descripcion" rows="4" placeholder="Cuéntanos brevemente de qué se trata tu taller"></textarea>
 
@@ -183,6 +191,7 @@ form.addEventListener('submit', async (e) => {
   const telefono = document.getElementById('telefono').value.trim();
   const correo = document.getElementById('correo').value.trim();
   const redes = document.getElementById('redes').value.trim();
+  const modalidad = document.getElementById('modalidad').value;
   const descripcion = document.getElementById('descripcion').value.trim();
 
   const soloDigitos = telefono.replace(/[^0-9]/g, '');
@@ -190,7 +199,7 @@ form.addEventListener('submit', async (e) => {
     document.getElementById('errTelefono').textContent = 'Ingresa un número de contacto válido.';
     return;
   }
-  if (!nombreTallerista || !nombreTaller || !correo || !redes) {
+  if (!nombreTallerista || !nombreTaller || !correo || !redes || !modalidad) {
     msg.className = 'msg err';
     msg.textContent = 'Completa todos los campos obligatorios.';
     return;
@@ -209,6 +218,7 @@ form.addEventListener('submit', async (e) => {
         telefono: soloDigitos,
         correo,
         redes_sociales: redes,
+        modalidad,
         descripcion_taller: descripcion
       })
     });
@@ -217,8 +227,8 @@ form.addEventListener('submit', async (e) => {
     document.getElementById('content').innerHTML = `
       <div class="success2">
         <div class="icon2">✓</div>
-        <h2>¡Gracias!</h2>
-        <p class="sub2">Ya recibimos tu información. El equipo de Casa Turquesa se va a poner en contacto contigo para coordinar los detalles de tu taller.</p>
+        <h2>¡Muchas gracias!</h2>
+        <p class="sub2">Recibimos su respuesta. La respuesta fue enviada al equipo. Esperamos darle una respuesta dentro de las 24 y 48 horas hábiles.</p>
       </div>`;
   } catch (err) {
     btn.disabled = false;

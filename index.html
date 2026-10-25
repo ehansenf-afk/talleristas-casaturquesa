@@ -206,6 +206,17 @@
         <label>Fecha y horario que tienes en mente <span class="opt">(opcional)</span></label>
         <input type="text" id="fechaTentativa" placeholder="Ej: sábado 14 de noviembre, de 15:00 a 17:00">
 
+        <label>Cuánto dura tu taller <span class="opt">(opcional)</span></label>
+        <select id="duracion">
+          <option value="">-- Elige cuánto dura --</option>
+          <option value="60">1 hora</option>
+          <option value="90">1 hora y media</option>
+          <option value="120">2 horas</option>
+          <option value="150">2 horas y media</option>
+          <option value="180">3 horas (máximo)</option>
+          <option value="240">Más de 3 horas (lo coordinamos contigo)</option>
+        </select>
+
         <label>Número de personas que esperas <span class="opt">(opcional)</span></label>
         <input type="text" id="personas" placeholder="Ej: 8">
 
@@ -314,6 +325,7 @@ form.addEventListener('submit', async (e) => {
         dias_difusion: dias,
         fecha_tentativa: val('fechaTentativa'),
         personas: val('personas'),
+        duracion_minutos: val('duracion'),
         valor_entrada: val('valorEntrada'),
         consumo: val('consumo'),
         conoce_cafeteria: val('conoce'),

@@ -124,9 +124,10 @@
           <li><strong>Flyer</strong>: lo crea la persona encargada de nuestras redes sociales desde que tu taller queda confirmado, con los datos de tu taller (nombre, descripción, fecha y hora, valor de la entrada)</li>
           <li><strong>Difusión</strong>: lo publicamos en nuestras historias destacadas de Instagram y en publicidad de Meta Ads (el valor de la difusión cubre Meta Ads)</li>
           <li>Solo publicamos flyers hechos por la cafetería, para mantener nuestra línea editorial</li>
-          <li>Se paga antes de empezar la difusión, idealmente 2 a 3 días antes de que comience el tramo que elijas</li>
+          <li>El flyer se diseña en <strong>24 horas hábiles</strong> desde que tenemos tu pago y tus datos</li>
+          <li>El pago debe estar hecho <strong>hasta 2 días antes del inicio de la publicidad</strong>. Si no, no alcanzamos con los tiempos y no podemos hacerla</li>
           <li>Las entradas y los pagos de tus participantes los gestionas tú: la cafetería no vende ni cobra entradas</li>
-          <li>Si el taller se cancela puedes reagendarlo: la difusión se paga de nuevo y el flyer se edita con la nueva fecha, sin costo. Si no se reagenda, no hacemos devolución del dinero</li>
+          <li>Puedes cancelar o reagendar tu taller. Una vez pagada y en marcha la publicidad, la campaña no se puede cancelar, así que <strong>no hay devolución</strong>. Si reagendas, la difusión se paga de nuevo y el flyer se edita con la nueva fecha, sin costo</li>
         </ul>
       </div>
     </div>
@@ -144,6 +145,19 @@
       </div>
     </div>
 
+    <div class="section-label">Horarios</div>
+    <div class="card">
+      <div class="card-body">
+        <ul>
+          <li><strong>Lunes a viernes</strong>: abrimos a las 7:30</li>
+          <li><strong>Sábado y domingo</strong>: abrimos a las 9:00</li>
+          <li>Cerramos a las <strong>21:00</strong>, por lo que los talleres deben terminar <strong>a más tardar a las 20:30</strong></li>
+          <li>Recomendamos partir una hora después de la apertura y terminar idealmente una hora antes del cierre</li>
+          <li>La entrada de los participantes la gestionas tú, en ambas modalidades</li>
+        </ul>
+      </div>
+    </div>
+
     <div class="section-label">Duración del taller</div>
     <div class="info-strip">⏱️ Los talleres tienen una duración <strong>máxima de 3 horas</strong>. Si necesitas más tiempo que eso, coordínalo directamente con nosotros antes de confirmar tu taller.</div>
 
@@ -155,14 +169,14 @@
           <li><strong>Incluido en la entrada</strong> de tu taller (recomendado): puedes elegir uno de nuestros coffee break o menú, a un <strong>precio especial</strong>, y te lo cobramos a ti al final del taller</li>
           <li><strong>Cada participante consume en el local</strong>: cada persona elige de nuestra carta y paga su consumo al final. En este caso <strong>no aplican los precios especiales</strong> de abajo</li>
         </ul>
-        Opciones con precio especial, <strong>solo si van incluidas en la entrada</strong> (los coffee break incluyen 1 bebestible: jugo natural, té o café simple):
+        Opciones con precio especial, <strong>solo si van incluidas en la entrada</strong> (los coffee break incluyen 1 bebestible a elección: café —expreso simple, americano o cappuccino—, té negro, té verde o jugo natural):
         <ul>
-          <li>🍰 <strong>Coffee break dulce</strong>: bebestible + pastel de la casa — <strong>$5.500</strong></li>
-          <li>🥪 <strong>Coffee break salado</strong>: bebestible + sándwich — <strong>$8.000</strong></li>
+          <li>🍰 <strong>Coffee break dulce</strong>: bebestible + pastel artesanal tradicional de la casa (sujeto a stock) — <strong>$5.500</strong></li>
+          <li>🥪 <strong>Coffee break salado</strong>: bebestible + sándwich clásico (tostada con huevo, tostada con palta, jarpa, omelette, ave pimentón o ave palta mayo) — <strong>$8.000</strong></li>
           <li>🍽️ <strong>Menú almuerzo</strong>: entrada, fondo y postre (no incluye bebestible) — <strong>$7.900</strong></li>
           <li>☕ <strong>Servicio completo de cafetería</strong> para todo el taller (se cotiza aparte)</li>
         </ul>
-        La propina es opcional, pero considera un 10% sobre el consumo.
+        Los coffee break no incluyen opciones sin gluten ni veganas: si alguien las necesita, se piden aparte y tienen un costo adicional. También se puede pedir de la carta, aparte del coffee break.<br>La propina es opcional, pero considera un 10% sobre el consumo.
       </div>
     </div>
 
@@ -172,15 +186,14 @@
     <form id="form">
       <label>Modalidad que te interesa</label>
       <select id="modalidad" required>
-        <option value="">-- Elige una para continuar --</option>
+        <option value="">-- Elige una --</option>
         <option value="Autogestión">1. Autogestión (sin costo de arriendo)</option>
         <option value="Publicidad compartida">2. Publicidad compartida (con costo)</option>
       </select>
-      <div class="info-strip" id="avisoModalidad" style="margin-top:12px;">Elige una modalidad para ver el resto del formulario.</div>
 
-      <div id="bloqueDetalle" style="display:none;">
-        <div id="bloqueDias" style="display:none;">
-          <label>Días de difusión</label>
+      <div id="bloqueDetalle">
+        <div id="bloqueDias">
+          <label>Días de difusión <span class="opt">(solo si eliges Publicidad compartida)</span></label>
           <select id="diasDifusion">
             <option value="">-- Elige un tramo --</option>
             <option value="5">5 días de difusión: $15.000 en total (difusión $10.000 + flyer $5.000)</option>
@@ -189,26 +202,26 @@
         </div>
 
         <label>Nombre del tallerista</label>
-        <input type="text" id="nombreTallerista" placeholder="Tu nombre">
+        <input type="text" id="nombreTallerista" required placeholder="Tu nombre">
 
         <label>Nombre del taller</label>
-        <input type="text" id="nombreTaller" placeholder="Ej: Taller de Macramé">
+        <input type="text" id="nombreTaller" required placeholder="Ej: Taller de Macramé">
 
         <label>Número de contacto (WhatsApp)</label>
-        <input type="tel" id="telefono" placeholder="+56 9 1234 5678">
+        <input type="tel" id="telefono" required placeholder="+56 9 1234 5678">
         <div class="field-err" id="errTelefono"></div>
 
         <label>Correo</label>
-        <input type="email" id="correo" placeholder="tucorreo@ejemplo.com">
+        <input type="email" id="correo" required placeholder="tucorreo@ejemplo.com">
 
         <label>Redes sociales</label>
-        <input type="text" id="redes" placeholder="@tuinstagram">
+        <input type="text" id="redes" required placeholder="@tuinstagram">
 
-        <label>Fecha y horario que tienes en mente <span class="opt">(opcional)</span></label>
-        <input type="text" id="fechaTentativa" placeholder="Ej: sábado 14 de noviembre, de 15:00 a 17:00">
+        <label>Fecha y horario que tienes en mente</label>
+        <input type="text" id="fechaTentativa" required placeholder="Ej: sábado 14 de noviembre, de 15:00 a 17:00">
 
-        <label>Cuánto dura tu taller <span class="opt">(opcional)</span></label>
-        <select id="duracion">
+        <label>Cuánto dura tu taller</label>
+        <select id="duracion" required>
           <option value="">-- Elige cuánto dura --</option>
           <option value="60">1 hora</option>
           <option value="90">1 hora y media</option>
@@ -218,28 +231,29 @@
           <option value="240">Más de 3 horas (lo coordinamos contigo)</option>
         </select>
 
-        <label>Número de personas que esperas <span class="opt">(opcional)</span></label>
-        <input type="text" id="personas" placeholder="Ej: 8">
+        <label>Número de personas que esperas</label>
+        <input type="text" id="personas" required placeholder="Ej: 8">
 
-        <label>Valor de la entrada de tu taller <span class="opt">(opcional)</span></label>
-        <input type="text" id="valorEntrada" placeholder="Ej: $15.000">
+        <label>Valor de la entrada de tu taller</label>
+        <input type="text" id="valorEntrada" required placeholder="Ej: $15.000">
 
-        <label>Consumo de tus participantes <span class="opt">(opcional)</span></label>
-        <select id="consumo">
-          <option value="">-- Aún no lo defino --</option>
+        <label>Consumo de tus participantes</label>
+        <select id="consumo" required>
+          <option value="">-- Elige una opción --</option>
+          <option value="por_definir">Aún no lo defino</option>
           <option value="incluido_en_entrada">Incluido en la entrada, con precio especial (me lo cobran a mí al final)</option>
           <option value="cada_participante">Cada participante consume de la carta, sin precio especial</option>
         </select>
 
-        <label>¿Ya conoces la cafetería? <span class="opt">(opcional)</span></label>
-        <select id="conoce">
-          <option value="">--</option>
+        <label>¿Ya conoces la cafetería?</label>
+        <select id="conoce" required>
+          <option value="">-- Elige una opción --</option>
           <option value="Sí">Sí</option>
           <option value="No">No todavía</option>
         </select>
 
-        <label>Descripción del taller <span class="opt">(opcional)</span></label>
-        <textarea id="descripcion" rows="4" placeholder="Cuéntanos brevemente de qué se trata tu taller"></textarea>
+        <label>Descripción del taller</label>
+        <textarea id="descripcion" required rows="4" placeholder="Cuéntanos brevemente de qué se trata tu taller"></textarea>
 
         <button type="submit" id="btn">Enviar mis datos</button>
         <div class="msg" id="msg"></div>
@@ -256,18 +270,13 @@ const btn = document.getElementById('btn');
 const msg = document.getElementById('msg');
 
 const selModalidad = document.getElementById('modalidad');
-const bloqueDetalle = document.getElementById('bloqueDetalle');
-const bloqueDias = document.getElementById('bloqueDias');
-const aviso = document.getElementById('avisoModalidad');
 
-// El resto del formulario solo se ve cuando se elige una modalidad.
+// Todo el formulario se ve desde el inicio. Los días de difusión solo son obligatorios con Publicidad compartida.
 function actualizarModalidad() {
-  const v = selModalidad.value;
-  const hay = v === 'Autogestión' || v === 'Publicidad compartida';
-  bloqueDetalle.style.display = hay ? 'block' : 'none';
-  aviso.style.display = hay ? 'none' : 'block';
-  bloqueDias.style.display = v === 'Publicidad compartida' ? 'block' : 'none';
-  if (v !== 'Publicidad compartida') document.getElementById('diasDifusion').value = '';
+  const diasSel = document.getElementById('diasDifusion');
+  const pub = selModalidad.value === 'Publicidad compartida';
+  diasSel.required = pub;
+  if (!pub) diasSel.value = '';
 }
 selModalidad.addEventListener('change', actualizarModalidad);
 actualizarModalidad();
@@ -303,7 +312,8 @@ form.addEventListener('submit', async (e) => {
     document.getElementById('errTelefono').textContent = 'Ingresa un número de contacto válido.';
     return;
   }
-  if (!nombreTallerista || !nombreTaller || !correo || !redes) {
+  const faltan = ['fechaTentativa','duracion','personas','valorEntrada','consumo','conoce','descripcion'].some((id) => !val(id));
+  if (!nombreTallerista || !nombreTaller || !correo || !redes || faltan) {
     msg.className = 'msg err';
     msg.textContent = 'Completa todos los campos obligatorios.';
     return;
